@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+VN:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./pictures/Logo.png">
+    <title>Veloura</title>
+</head>
+<body>
+    
+    <!-- header start -->
+    <header id = 'head'>
+        <div class="header_container">
+            <div class='head_element_container'>
+                <div class="main_title">
+                    <h2><a href="#"><img src="./pictures/Logo_title.png" alt="Valoura"></a></h2>
+                </div>
+                <div class="header_element">
+                    <a href="#head">Home</a>
+                    <a href="#head" id="contact_form_button">Contact</a>
+                    <a href="#head">About</a>
+                </div>
+            </div>
+            <div class="head_cart_element">
+
+                <div class="cart_element">
+                    <a href="#" id="cart"><i class="fa-solid fa-cart-plus"></i></a>
+                    <a href="#" id="profile"><i class="fa-solid fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- Contact Card Secsion Start -->
+    <div class="contact_form" id="contact">
+        <div class="contact_form_container">
+            <div class="contact_form_details">
+                <h1>Contact Information</h1>
+                <p>Fill up the form and our team will connect you within 24 hours.</p>
+            
+                <ul class='company_details'>
+                    <li><i class="fa-solid fa-phone"></i> +91 8802389087</li>
+                    <li><i class="fa-solid fa-envelope"></i></i>Veloura@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i>Faridabad,Haryana(121003)</li>
+                </ul>
+            
+                <ul class="contact_social_icons">
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-whatsapp"></i></li>
+                    <li><i class="fa-brands fa-telegram"></i></li>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                </ul>
+            </div>
+            
+            <div class="contact_fill_form">
+                <form id="user_contact">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Firstname">
+            
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Lastname">
+            
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+            
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone">
+            
+                    <label for="query">Query:</label>
+                    <input type="text" id="query" name="query" placeholder="Query">
+            
+                    <!-- Empty label for alignment -->
+                    <label></label>
+            
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="contact_close_btn">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- thankyou card -->
+    <div class="contact_thankyou">
+        <div class="card">
+            <h1>Thank You <span id="userName"></span> for contacting us</h1>
+            <p>Our team will reach you within 24 hours.</p>
+            <div class="contact_thankyou_close_btn">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Contact Card Secsion End -->
+
+
+    <!-- add to cart Secsion Start -->
+
+    <div class="cart_container">
+        <button class="close_add_to_cart">X</button>
+        <div class="cart_list">
+            <ul class="cart_item">
+                
+            </ul>
+        </div>
+    </div>
+
+    <!-- add to cart Secsion End -->
+
+
+
+    <!-- Hero Secsion Start -->
+    <div class="hero_section"  id="home">
+        <div class="hero_title">
+            <h2>Wear Confidence. Define Your Style.<br>
+                Discover trendsetting fashion <br>made for every moment.</h2>
+        </div>
+        <div class="hero_image">
+            <img src="./pictures/hero_Image.png" alt="Hero Image ">
+        </div>
+    </div>
+    <!-- Hero Secsion End -->
+
+    <!-- Main Secsion End -->
+    <div class="main_container" id="collection">
+        <div class="search_box" >
+            <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+            <input type="text" placeholder="Search here" id="search_input" >
+        </div>
+        <div class="clothes_category">
+            <button>NEW</button>
+            <button>SHIRT</button>
+            <button>T-SHIRT</button>
+            <button>SHORTS</button>
+            <button>PANT</button>
+        </div>
+    </div>
+    <!-- Main Secsion End -->
+
+    <!-- product Secsion End -->
+    <div class="product_section" >
+        <div class="product">
+            <!-- script will show the data -->
+        </div>
+    </div>
+    <!-- product Secsion End -->
+
+
+    <!-- Footer Start -->
+
+    <footer class="footer">
+        <div class="footer_container">
+            <div class="main_footer_details">
+                <h2><a href="#">VALOURA</a></h2>
+                <p>Stay Stylish, Stay You 
+    with VALOURA</p>
+                <ul class="footer_icons">
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-whatsapp"></i></li>
+                    <li><i class="fa-brands fa-telegram"></i></li>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                </ul>
+                <a href="#home" id="back_to_top">Back to top</a>
+            </div>
+            <div class="location_links">
+                <div class="location">
+                    <ul class="location_item">
+                        <li>Noida</li>
+                        <li>Delhi</li>
+                        <li>Mumbai</li>
+                        <li>Karnataka</li>
+                        <li>Rajesthan</li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <ul class="links_item">
+                        <li>Privacy Policy</li>
+                        <li>Term & Services</li>
+                        <li>Legal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>@Copyright ©2025</p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
