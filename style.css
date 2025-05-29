@@ -7,7 +7,6 @@
 
 body{
     width: 100%;
-    height: 100vh;
 }
 
 
@@ -690,18 +689,112 @@ i{
 /* Responsive Design: Mobile (≤768px) */
 /* =============================== */
 
+
 @media (max-width: 768px) {
-    .hero_section{
-        width: 100%;
-        height: 450px;
-        h2{
-            padding-left: 5px;
-            font-size: 25px;
-        }
-        img{
-            width: 320px;
-            height: 400px;
-            padding-left: 5px;
-        }
+    
+    /* hero section */
+   .hero_section {
+        flex-direction: column;
+        height: auto; /* allow height to grow with content */
+        padding-top: 80px;
     }
+
+    .hero_title,
+    .hero_image {
+        width: 100%;
+        padding-left: 20px;
+        text-align: center;
+    }
+
+    /* main section  */
+      .main_container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .search_box {
+        width: 90%;
+        padding: 5px 10px;
+        height: 40px;
+    }
+
+    .search_box label i {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+        padding-top: 6px;
+    }
+
+    .search_box input {
+        height: 30px;
+    }
+
+    .clothes_category {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .clothes_category button {
+        width: 80px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .contact_form {
+    padding-left: 20px;
+    padding-top: 30px;
+    height: auto;
+    flex-direction: column;
+    background-position: center;
+  }
+
+  .contact_form_container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact_form_details {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    line-height: 1.6;
+    height: auto;
+  }
+
+  .contact_form_details p {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .contact_form_details ul.contact_social_icons {
+    justify-content: start;
+    gap: 20px;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .contact_fill_form {
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .contact_fill_form form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact_fill_form button {
+    grid-column: span 1;
+  }
+
+  .contact_close_btn i {
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+  }
 }
