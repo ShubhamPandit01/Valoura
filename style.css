@@ -98,6 +98,7 @@ i{
     display:none;
     margin-top: 50px;
     position: relative;
+    padding:50px;
 } 
 
 .close_add_to_cart{
@@ -599,146 +600,96 @@ i{
 /* Thankyou card css ----end */
 
 
+/* about css ----end */
+
+.about {
+  display: none;
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.about.active {
+  display: inline-block;
+}
+
+/* Headings */
+.about h2 {
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  border-left: 5px solid #ff4b2b;
+  padding-left: 1rem;
+}
+
+.about h3 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+.about p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* List Styling */
+.about ul {
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.about li {
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+}
+
+/* Contact & Link */
+.about a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #000000;
+  background-color: #dad1cb;;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.about a:hover {
+  background-color: rgb(133, 126, 126);
+  color:white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* about css ----end */
+
+
 /* =============================== */
 /* Responsive Design: Mobile (≤768px) */
 /* =============================== */
 
 @media (max-width: 768px) {
-  /* Hero Section */
-  .hero_section {
-    flex-direction: column;
-    height: auto;
-    padding-top: 80px;
-    text-align: center;
-  }
-
-  .hero_title,
-  .hero_image {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .hero_title {
-    font-size: 20px;
-  }
-
-  /* Main Section */
-  .main_container {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 0;
-    gap: 20px;
-  }
-
-  .search_box,
-  .clothes_category {
-    width: 90%;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .clothes_category button {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  /* Product Section */
-  .product {
-    grid-template-columns: 1fr;
-  }
-
-  .product_detail {
-    height: auto;
-    padding: 10px;
-  }
-
-  .product_detail h2 {
-    font-size: 16px;
-  }
-
-  .product_detail p {
-    font-size: 13px;
-  }
-
-  .product_btn {
-    flex-direction: column;
-    gap: 10px;
-    height: auto;
-    padding: 10px 0;
-  }
-
-  .buy_btn,
-  .add_to_cart_btn {
-    width: 100%;
-  }
-
-  /* Add to Cart Items */
-  .cart_item {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
-  .item {
-    padding: 15px;
-  }
-
-  .item img {
-    height: 200px;
-  }
-
-  /* Contact Form */
-  .contact_form {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-
-  .contact_form_container {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
-
-  .contact_form_details,
-  .contact_fill_form {
-    width: 100%;
-  }
-
-  .contact_form_details {
-    text-align: center;
-  }
-
-  .contact_form_details p {
-    margin-left: 0;
-  }
-
-  .contact_form_details ul.contact_social_icons {
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .contact_fill_form form {
-    grid-template-columns: 1fr;
-  }
-
-  .contact_fill_form button {
-    grid-column: 1;
-    width: 100%;
-  }
-
-  /* Thank You Card */
-  .contact_thankyou .card {
-    width: 90%;
-    height: auto;
-    padding: 20px;
-  }
-
-  .contact_thankyou h1 {
-    font-size: 20px;
-  }
-
-  /* Ensure buttons don't overflow */
-  button, input {
-    max-width: 100%;
-  }
+    
 }

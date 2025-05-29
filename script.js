@@ -782,28 +782,25 @@ const newProduct =[
   }
 ];
 
-
-//changing the price to inr
-let price = [100,200,400,500,300,540,650,340,230,430,230]
-for(let t of products){
-  t.price = price[Math.floor(Math.random()*price.length)]
-}
-
-
 //script
 
 //header script for buttons ---- start
 
 let header_btns = document.querySelectorAll('.header_element a')
-// console.log(header_btns)
 header_btns.forEach((btn)=>{
   
-  btn.addEventListener('click',(e)=>{
-    e.preventDefault()
+  btn.addEventListener('click',()=>{
     header_btns.forEach((item)=>item.classList.remove("active"))
     btn.classList.add("active")
   })
 })
+
+const home = document.getElementById('home')
+home.addEventListener('click',()=>{
+  location.reload();
+  
+})
+
 
 //header script for buttons ---- end
 
@@ -874,7 +871,6 @@ const btns = document.querySelectorAll(".clothes_category button ")
 let btn_style_flag = false
 btns.forEach((btn_item)=>{
   btn_item.addEventListener("click",(e)=>{
-    e.preventDefault()
     btns.forEach(btn => btn.classList.remove("active"));
     btn_item.classList.add('active');
     if(e.target.innerText == "NEW") display_card(newProduct,'menBlazer')
@@ -889,17 +885,35 @@ btns.forEach((btn_item)=>{
 
 const contact_form = document.querySelector(".contact_form")
 const contact_btn = document.querySelector("#contact_form_button")
+const hero_section = document.querySelector('.hero_section')  // selection hero section
+const main_container = document.querySelector('.main_container')  // selection main section 
+const contact_thankyou_close_btn = document.querySelector('.contact_thankyou_close_btn')  // selection contact_thankyou_close_btn
 
 
 
-contact_btn.addEventListener('click', (e)=>{
-  e.preventDefault()
+
+contact_btn.addEventListener('click', ()=>{
+  hero_section.style.display = "none"
+  main_container.style.display = "none"
+  productContainer.style.display = "none"
+  about_container.style.display = "none"
+
   contact_form.style.display = contact_form.classList.toggle('active') ? 'flex' : 'none';
+
+  if (!contact_form.classList.contains('active')) {
+    contact_btn.classList.remove('active')    // removing active class from contact button for normal css
+    hero_section.style.display = "flex"
+    main_container.style.display = "flex"
+    productContainer.style.display = "grid"
+    if(cart_icon.classList.contains('active')){
+      cart_container.style.display = "inline"
+    }
+  }
+
 })
 
 const close_btn = document.querySelector(".contact_close_btn")
-close_btn.addEventListener('click', (e)=>{
-  e.preventDefault()
+close_btn.addEventListener('click', ()=>{
   contact_form.style.display = 'none'
 })
 
@@ -918,6 +932,9 @@ form.addEventListener('submit',(e)=>{
 
 thankyou.addEventListener('click',()=>{
   thankyou.style.display = 'none'
+  hero_section.style.display = "flex"
+  main_container.style.display = "flex"
+  productContainer.style.display = "grid"
   document.body.style.overflow = "auto"
 })
 
@@ -928,32 +945,54 @@ thankyou.addEventListener('click',()=>{
 
 const cart_icon = document.getElementById('cart')
 const cart_btn = document.querySelectorAll('.add_to_cart_btn')
-const container = document.querySelector('.cart_container')
+const cart_container = document.querySelector('.cart_container')
 
 const close_add_to_cart = document.querySelector('.close_add_to_cart')
 
 close_add_to_cart.addEventListener('click',()=>{  //applying event on close btn to close the container when clicked
-  container.style.display = 'none'
+  cart_container.style.display = 'none'
 })
 
 
 cart_icon.addEventListener('click',()=>{  //applying event on cart icon to proceed
 
-  container.style.display = container.classList.toggle('active') ? 'inline' : 'none';
+  productContainer.style.display = "none"  // display none all the sections when opens the cart icons
+  hero_section.style.display = "none"
+  main_container.style.display = "none"
+  about_container.style.display = "none"
+  contact_form.style.display = "none"
 
+  cart_container.style.display = cart_container.classList.toggle('active') ? 'inline' : 'none';
+
+  if(!cart_container.classList.contains('active')){
+    hero_section.style.display = "flex"
+    main_container.style.display = "flex"
+    productContainer.style.display = "grid"
+  }
   
   let item_list = document.querySelectorAll('.cart_item')
   if(item_list.length == 1){        //checking if cart if empty then showing message
-    if (!container.querySelector('.empty_cart')){
+    if (!cart_container.querySelector('.empty_cart')){
       const empty_cart = document.createElement('div')
       empty_cart.className = 'empty_cart'
       empty_cart.innerHTML = `
         <h2> Cart is Empty... </h2>
-        <a href = '#collection'>Continue Shopping</a>
+        <a id = 'continue_shopping' >Continue Shopping</a>
       `
-      container.append(empty_cart)
+      cart_container.append(empty_cart)
+
+      const continue_shopping = document.getElementById('continue_shopping')
+      continue_shopping.addEventListener('click',()=>{
+        cart_container.style.display = "none"
+        hero_section.style.display = "flex"
+        main_container.style.display = "flex"
+        productContainer.style.display = "grid"
+      })
     }
   }
+
+  
+
 })
 
 cart_btn.forEach((product)=>{
@@ -966,7 +1005,6 @@ cart_btn.forEach((product)=>{
 
 
     product.style.backgroundColor ='rgb(133, 123, 116)'
-    e.preventDefault()
     const productDiv = e.target.closest('.product_card')
     const product_img = productDiv.querySelector("img")  //clicked product image
     const product_title = productDiv.querySelector("h2") //clicked product title
@@ -995,9 +1033,7 @@ cart_btn.forEach((product)=>{
 
     remove_btn.forEach((item)=>{
       item.addEventListener('click', (e)=>{
-        e.preventDefault()
         e.target.closest('.cart_item').remove()
-        console.log('remove',document.querySelectorAll('.cart_item').length)
         if (document.querySelectorAll('.cart_item').length === 1) {    //if the cart id empty then we are creatig a new empty cart to show empty msg
           const empty_cart = document.createElement('div')
           empty_cart.className = 'empty_cart'
@@ -1008,7 +1044,7 @@ cart_btn.forEach((product)=>{
           
           const empty_msg = document.querySelector('.empty_cart')  // append empty cart after removing the items also if the empty msg is already there then it's not to be append 
           if (!empty_msg) {
-            container.append(empty_cart)
+            cart_container.append(empty_cart)
           }
         }
       })
@@ -1032,8 +1068,32 @@ buy_btn.forEach((product)=>{
 })
 
 //but button ---- end
-
-
-
-
 // cart form ---- End
+
+
+// about ---- End
+
+const about_container = document.querySelector('.about')
+const about_btn = document.getElementById('about_btn')
+
+about_btn.addEventListener('click',()=>{
+  hero_section.style.display = "none"
+  main_container.style.display = "none"
+  productContainer.style.display = "none"
+  cart_container.style.display = "none"
+  contact_form.style.display = "none"
+
+  about_container.style.display = about_container.classList.toggle('active') ? 'inline-block' : 'none';
+
+  if(!about_container.classList.contains('active')){
+    about_btn.classList.remove('active')
+    hero_section.style.display = "flex"
+    main_container.style.display = "flex"
+    productContainer.style.display = "grid"
+  }
+  
+})
+
+// about ---- End
+
+
