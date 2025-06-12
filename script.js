@@ -915,6 +915,9 @@ contact_btn.addEventListener('click', ()=>{
 const close_btn = document.querySelector(".contact_close_btn")
 close_btn.addEventListener('click', ()=>{
   contact_form.style.display = 'none'
+  hero_section.style.display = "flex"
+    main_container.style.display = "flex"
+    productContainer.style.display = "grid"
 })
 
 const thankyou = document.querySelector('.contact_thankyou')
