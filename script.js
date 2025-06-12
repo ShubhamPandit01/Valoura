@@ -947,15 +947,9 @@ const cart_icon = document.getElementById('cart')
 const cart_btn = document.querySelectorAll('.add_to_cart_btn')
 const cart_container = document.querySelector('.cart_container')
 
-const close_add_to_cart = document.querySelector('.close_add_to_cart')
-
-close_add_to_cart.addEventListener('click',()=>{  //applying event on close btn to close the container when clicked
-  cart_container.style.display = 'none'
-})
-
 
 cart_icon.addEventListener('click',()=>{  //applying event on cart icon to proceed
-
+  
   productContainer.style.display = "none"  // display none all the sections when opens the cart icons
   hero_section.style.display = "none"
   main_container.style.display = "none"
@@ -1203,8 +1197,8 @@ slidebar_elements.forEach((element)=>{
 
 
     else if(header_element == 'profile'){     //Profile element of hamburger
-      alert(`Sorry we're working on this fnctionality. please come back after some time or you can enjoy more features.`)
-      location.reload()
+      profileContainer.style.display = "flex"
+      slidebar.style.display = 'none'
     }
   })
 })
@@ -1212,3 +1206,52 @@ slidebar_elements.forEach((element)=>{
 
 
 //hamburger & Slidebar end
+
+
+
+// profile section script created from gpt
+
+// Elements
+const profileContainer = document.querySelector('.profile_container');
+const closeBtn = document.getElementById('close-btn');
+const signupToggle = document.getElementById('signup-toggle');
+const loginToggle = document.getElementById('login-toggle');
+const signupForm = document.getElementById('signup-form');
+const loginForm = document.getElementById('login-form');
+
+// Assume your profile icon has ID "profile-icon"
+const profileIcon = document.getElementById('profile');
+
+// Show modal on profile icon click
+profileIcon.addEventListener('click', () => {
+  profileContainer.style.display = 'flex';
+  loginForm.classList.remove('hidden');
+  signupForm.classList.add('hidden');
+});
+
+// Close modal
+closeBtn.addEventListener('click', () => {
+  profileContainer.style.display = 'none';
+});
+
+// Toggle to SignUp
+signupToggle.addEventListener('click', () => {
+  signupForm.classList.remove('hidden');
+  loginForm.classList.add('hidden');
+});
+
+// Toggle to Login
+loginToggle.addEventListener('click', () => {
+  loginForm.classList.remove('hidden');
+  signupForm.classList.add('hidden');
+});
+
+// Close modal when clicking outside the modal box
+window.addEventListener('click', (e) => {
+  if (e.target === profileContainer) {
+    profileContainer.style.display = 'none';
+  }
+});
+
+
+

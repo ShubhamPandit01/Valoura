@@ -41,6 +41,37 @@
     </header>
     <!-- header end -->
 
+    <!-- profile Start -->
+
+    <!-- Modal Form Container  , Also using chat GPT  -->
+    <div class='profile_container'>
+        <div class="profile_elements">
+            <span class="close-btn" id="close-btn">&times;</span>
+    
+            <div class="form-toggle">
+                <button id="signup-toggle">Sign Up</button>
+                <button id="login-toggle">Login</button>
+            </div>
+
+            <form id="signup-form" class="form hidden">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+    
+            <form id="login-form" class="form">
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- profile Start -->
+
 
     <!-- slidebar Start -->
 
@@ -101,7 +132,7 @@
                 </form>
             </div>
 
-            <div class="contact_close_btn">
+          <div class="contact_close_btn">
                 <i class="fa-solid fa-circle-xmark"></i>
             </div>
 
@@ -126,7 +157,6 @@
     <!-- add to cart Secsion Start -->
 
     <div class="cart_container">
-        <button class="close_add_to_cart">X</button>
         <div class="cart_list">
             <ul class="cart_item">
                 
