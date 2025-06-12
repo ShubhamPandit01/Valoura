@@ -91,6 +91,33 @@ i{
 /* header css end */
 
 
+/* hamburger & slidebar css start */
+
+.hamburger{
+    display: none;
+}
+
+.slidebar{
+    display:none;
+    position: fixed;
+    top: 15px;
+    background-color: white;
+    width: 100%;
+    z-index: 50;
+    margin-top: 35px;
+    padding:40px;
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: 600;
+    ul{
+        list-style: none;
+    }
+}
+
+
+/* hamburger & slidebar css end */
+
+
 /* add to cart item css Start */
 
 .cart_container{
@@ -750,7 +777,7 @@ i{
 @media screen and (max-width: 768px) {
   .contact_form {
     padding-left: 20px;
-    padding-top: 30px;
+    padding-top: 45px;
     height: auto;
     flex-direction: column;
     background-position: center;
@@ -800,4 +827,31 @@ i{
     right: 20px;
     font-size: 24px;
   }
+
 }
+
+ /* header css */
+
+ @media screen and (max-width: 768px){
+
+    .header_element{
+        display:none;
+    }
+
+    .head_cart_element{
+        display:none;
+    }
+
+    .hamburger{
+        display:inline;
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+    .header_container{
+        display: flex;
+        justify-content: space-around;
+    }
+
+ }
+

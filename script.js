@@ -1097,3 +1097,118 @@ about_btn.addEventListener('click',()=>{
 // about ---- End
 
 
+//hamburger & Slidebar Start
+
+const slidebar = document.querySelector(".slidebar")
+const hamburger = document.querySelector(".hamburger")
+const slidebar_elements = document.querySelectorAll(".slidebar li")
+
+hamburger.addEventListener("click",()=>{
+  slidebar.style.display = slidebar.classList.toggle('active') ? 'inline-block' : 'none';
+})
+
+
+slidebar_elements.forEach((element)=>{
+  element.addEventListener("click",(e)=>{
+    e.preventDefault()
+    header_element = e.target.innerText.toLowerCase()
+
+
+    if(header_element == 'home'){             //home element of hamburger
+        location.reload();
+        slidebar.style.display = 'none'
+    }
+
+
+    else if(header_element == 'contact'){   //contact element of hamburger
+      slidebar.style.display = 'none'
+      hero_section.style.display = "none"
+      main_container.style.display = "none"
+      productContainer.style.display = "none"
+      about_container.style.display = "none"
+
+      contact_form.style.display = contact_form.classList.toggle('active') ? 'flex' : 'none';
+
+      if (!contact_form.classList.contains('active')) {
+        contact_btn.classList.remove('active')    // removing active class from contact button for normal css
+        hero_section.style.display = "flex"
+        main_container.style.display = "flex"
+        productContainer.style.display = "grid"
+        if(cart_icon.classList.contains('active')){
+          cart_container.style.display = "inline"
+        }
+      }
+    }
+
+
+    else if(header_element == 'about'){   //about element of hamburger
+      slidebar.style.display = 'none'
+      hero_section.style.display = "none"
+      main_container.style.display = "none"
+      productContainer.style.display = "none"
+      cart_container.style.display = "none"
+      contact_form.style.display = "none"
+
+      about_container.style.display = about_container.classList.toggle('active') ? 'inline-block' : 'none';
+
+      if(!about_container.classList.contains('active')){
+        about_btn.classList.remove('active')
+        hero_section.style.display = "flex"
+        main_container.style.display = "flex"
+        productContainer.style.display = "grid"
+      }
+    }
+
+
+    else if(header_element == 'cart'){    //cart element of hamburger
+      slidebar.style.display = 'none'
+      productContainer.style.display = "none"  // display none all the sections when opens the cart icons
+      hero_section.style.display = "none"
+      main_container.style.display = "none"
+      about_container.style.display = "none"
+      contact_form.style.display = "none"
+
+      cart_container.style.display = cart_container.classList.toggle('active') ? 'inline' : 'none';
+
+      if(!cart_container.classList.contains('active')){
+        hero_section.style.display = "flex"
+        main_container.style.display = "flex"
+        productContainer.style.display = "grid"
+      }
+
+
+      //applying cart functionality again for the hamburger
+      
+       let item_list = document.querySelectorAll('.cart_item')
+        if(item_list.length == 1){        //checking if cart if empty then showing message
+          if (!cart_container.querySelector('.empty_cart')){
+            const empty_cart = document.createElement('div')
+            empty_cart.className = 'empty_cart'
+            empty_cart.innerHTML = `
+              <h2> Cart is Empty... </h2>
+              <a id = 'continue_shopping' >Continue Shopping</a>
+            `
+            cart_container.append(empty_cart)
+
+            const continue_shopping = document.getElementById('continue_shopping')
+            continue_shopping.addEventListener('click',()=>{
+              cart_container.style.display = "none"
+              hero_section.style.display = "flex"
+              main_container.style.display = "flex"
+              productContainer.style.display = "grid"
+            })
+          }
+        }
+    }
+
+
+    else if(header_element == 'profile'){     //Profile element of hamburger
+      alert(`Sorry we're working on this fnctionality. please come back after some time or you can enjoy more features.`)
+      location.reload()
+    }
+  })
+})
+
+
+
+//hamburger & Slidebar end
